@@ -1,5 +1,6 @@
 package com.space.scanner.alien;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +13,8 @@ import com.space.scanner.alien.bean.Venus;
 @SpringBootApplication
 public class AlienApplication {
 
-	private String planet = "venus";
+	@Value("${app.planet}")
+	private String planet;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AlienApplication.class, args);
