@@ -1,0 +1,12 @@
+server:
+  port: 8080
+  
+zuul:
+  prefix: /scanner
+  routes:
+    venus:
+      path: /venus/**
+      url: http://localhost:9090
+    mars:
+      path: /mars/**
+      url: http://localhost:9091
